@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash-Q - Transform Your Learning</title>
+    <meta name="description"
+        content="Transform your learning with flashcards. Create, study, and share flashcards with Flash-Q.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.png" alt="Flash-Q Logo" class="logo-icon" width="50" height="50">
+            <span class="logo-text">Flash-Q</span>
+        </div>
+        <nav class="nav">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5" fill="currentColor" />
+                    <path
+                        d="M12 1V3M12 21V23M23 12H21M3 12H1M20.49 20.49L19.07 19.07M4.93 4.93L3.51 3.51M20.49 3.51L19.07 4.93M4.93 19.07L3.51 20.49"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="hero-section">
+            <div class="hero-text">
+                <h1 class="hero-title">Welcome to Flash-Q</h1>
+                <p class="hero-subtitle">Transform your learning with flashcards</p>
+
+                <!-- Categories -->
+                <div class="categories">
+                    <button class="category-tag active" data-category="all">All</button>
+                    <button class="category-tag" data-category="science">Science</button>
+                    <button class="category-tag" data-category="math">Math</button>
+                    <button class="category-tag" data-category="language">Language</button>
+                    <button class="category-tag" data-category="history">History</button>
+                    <button class="category-tag" data-category="programming">Programming</button>
+                </div>
+
+                <button class="cta-button" id="lets-go-btn">LET'S GO</button>
+            </div>
+
+            <div class="hero-image">
+                <img src="images/hero-illustration.png" alt="Flash-Q Learning Illustration" class="illustration">
+            </div>
+        </div>
+
+        <!-- Tabs Section -->
+        <section class="tabs-section">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="my-cards">My Cards</button>
+                <button class="tab-button" data-tab="public-cards">Public Cards</button>
+            </div>
+
+            <!-- My Cards Tab Content -->
+            <div class="tab-content active" id="my-cards">
+                <div class="cards-header">
+                    <h2>My Flash Cards</h2>
+                    <button class="create-card-btn" id="create-my-card">+ Create Card</button>
+                </div>
+                <div class="cards-grid" id="my-cards-grid">
+                    <div class="empty-state">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="20" width="60" height="40" rx="4" stroke="currentColor" stroke-width="2"
+                                fill="none" />
+                            <path d="M40 35V45M35 40H45" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                        <p>No cards yet. Create your first flashcard!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Public Cards Tab Content -->
+            <div class="tab-content" id="public-cards">
+                <div class="cards-header">
+                    <h2>Public Flash Cards</h2>
+                </div>
+                <div class="cards-grid" id="public-cards-grid">
+                    <div class="empty-state">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="20" width="60" height="40" rx="4" stroke="currentColor" stroke-width="2"
+                                fill="none" />
+                            <circle cx="40" cy="40" r="8" stroke="currentColor" stroke-width="2" fill="none" />
+                        </svg>
+                        <p>No public cards available. Check back later!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Create Card Modal -->
+    <div class="modal" id="create-card-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Flash Card</h2>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+            <form class="card-form" id="card-form">
+                <div class="form-group">
+                    <label for="card-category">Category</label>
+                    <select id="card-category" required>
+                        <option value="">Select a category</option>
+                        <option value="science">Science</option>
+                        <option value="math">Math</option>
+                        <option value="language">Language</option>
+                        <option value="history">History</option>
+                        <option value="programming">Programming</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="card-question">Question</label>
+                    <textarea id="card-question" rows="3" placeholder="Enter your question..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="card-answer">Answer</label>
+                    <textarea id="card-answer" rows="3" placeholder="Enter the answer..." required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancel-card">Cancel</button>
+                    <button type="submit" class="btn-primary">Create Card</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

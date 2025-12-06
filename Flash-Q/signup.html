@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Flash-Q</title>
+    <meta name="description" content="Create your Flash-Q account to start learning with flashcards.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Flash-Q Logo" class="logo-icon" width="45" height="45">
+                <span class="logo-text">Flash-Q</span>
+            </a>
+        </div>
+        <nav class="nav">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5" fill="currentColor" />
+                    <path
+                        d="M12 1V3M12 21V23M23 12H21M3 12H1M20.49 20.49L19.07 19.07M4.93 4.93L3.51 3.51M20.49 3.51L19.07 4.93M4.93 19.07L3.51 20.49"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Sign Up Form -->
+    <main class="auth-container">
+        <div class="auth-card">
+            <button class="auth-close-btn" onclick="window.location.href='index.html'"
+                aria-label="Close">&times;</button>
+            <h1 class="auth-title">Create Account</h1>
+            <p class="auth-subtitle">Join Flash-Q and start learning today</p>
+
+            <form class="auth-form" id="signup-form">
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" placeholder="Enter your first name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" placeholder="Enter your last name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Create a username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create a password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" required>
+                        <span>I agree to the Terms and Conditions</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="auth-button">Sign Up</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html" class="auth-link">Login</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
