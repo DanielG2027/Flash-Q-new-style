@@ -21,6 +21,14 @@
             <span class="logo-text">Flash-Q</span>
         </div>
         <nav class="nav">
+            <div class="nav-links">
+                <a href="profile.html" class="nav-link">Dashboard</a>
+                <a href="#help" class="nav-link">Help</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            <button id="profile-menu-btn" class="profile-menu-btn" aria-label="Profile menu">
+                <img src="images/default-avatar.png" alt="Profile" class="profile-avatar-small">
+            </button>
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
                 <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -139,6 +147,35 @@
                     <button type="submit" class="btn-primary">Create Card</button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- Profile Menu Modal -->
+    <div class="profile-modal" id="profile-modal">
+        <div class="profile-modal-content">
+            <button class="close-profile-modal" id="close-profile-modal">&times;</button>
+            <div class="profile-modal-header">
+                <img src="images/default-avatar.png" alt="Profile" class="profile-modal-avatar">
+                <h3 class="profile-modal-name">User Name</h3>
+                <p class="profile-modal-email">user@example.com</p>
+            </div>
+            <div class="profile-modal-menu">
+                <a href="profile.html#settings" class="profile-modal-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 1V3M12 21V23M23 12H21M3 12H1M20.49 20.49L19.07 19.07M4.93 4.93L3.51 3.51M20.49 3.51L19.07 4.93M4.93 19.07L3.51 20.49" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Settings</span>
+                </a>
+                <button class="profile-modal-item logout-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Log Out</span>
+                </button>
+            </div>
         </div>
     </div>
 

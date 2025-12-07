@@ -3,17 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src ="script.js"></script>
+    <title>Profile - Flash-Q</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
         <div class="logo">
-            <img src="images/logo.png" alt="Flash-Q Logo" class="logo-icon" width="50" height="50">
-            <span class="logo-text">Flash-Q</span>
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Flash-Q Logo" class="logo-icon" width="50" height="50">
+                <span class="logo-text">Flash-Q</span>
+            </a>
         </div>
         <nav class="nav">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#help" class="nav-link">Help</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            <button id="profile-menu-btn" class="profile-menu-btn" aria-label="Profile menu">
+                <img src="images/default-avatar.png" alt="Profile" class="profile-avatar-small">
+            </button>
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
                 <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -30,47 +43,133 @@
         </nav>
     </header>
 
-    <div class ="main-container">
-        
-            <div class="welcome-text">
-            <h2>Welcome back, User!</h2>
-        </div>
-
-        <div class="quick-actions">
-            <h4>Quick Actions</h4>
-            <button class="create-flashcards">
-                <p>Create Flashcards</p>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="profile-container">
+            <h1 class="profile-title">My Profile</h1>
             
-            <button class="view-cards">
-                <p>View Flashcards</p>
-            </button>
-            
+            <!-- Profile Info Card -->
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="images/default-avatar.png" alt="User Avatar" class="avatar-image">
+                    </div>
+                    <div class="profile-info">
+                        <h2 class="profile-name">User Name</h2>
+                        <p class="profile-email">user@example.com</p>
+                        <p class="profile-joined">Member since January 2024</p>
+                    </div>
+                </div>
+                <button class="btn-primary edit-profile-btn">Edit Profile</button>
+            </div>
 
-            <button class="upload-documents">
-                <p>Upload Document</p>
-            </button>
+            <!-- Quick Actions -->
+            <div class="quick-actions-grid">
+                <button class="action-card">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 9V15M9 12H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="action-title">Create Flashcards</h3>
+                    <p class="action-description">Start creating new flashcard sets</p>
+                </button>
+                <button class="action-card">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M8 10H16M8 14H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="action-title">View Flashcards</h3>
+                    <p class="action-description">Browse your flashcard collection</p>
+                </button>
+                <button class="action-card">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 2V8H20M12 13V17M10 15H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="action-title">Upload Document</h3>
+                    <p class="action-description">Import documents to generate cards</p>
+                </button>
+                <button class="action-card">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="action-title">Publish Cards</h3>
+                    <p class="action-description">Share your cards with others</p>
+                </button>
+            </div>
 
-            <button class="publish-cards">
-                <p>Publish Cards</p>
-            </button>
+            <!-- Recent Activity -->
+            <section class="profile-section">
+                <h3 class="section-title">Recent Activity</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <p class="activity-text">Created flashcard "Biology 101 - Chapter 3"</p>
+                        <p class="activity-time">2 hours ago</p>
+                    </div>
+                    <div class="activity-item">
+                        <p class="activity-text">Completed study session for "Math Basics"</p>
+                        <p class="activity-time">Yesterday</p>
+                    </div>
+                    <div class="activity-item">
+                        <p class="activity-text">Added 5 new cards to "Programming Concepts"</p>
+                        <p class="activity-time">3 days ago</p>
+                    </div>
+                </div>
+            </section>
 
+            <!-- Settings Section -->
+            <section class="profile-section" id="settings">
+                <h3 class="section-title">Settings</h3>
+                <div class="settings-group">
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <h4>Email Notifications</h4>
+                            <p>Receive updates about new features</p>
+                        </div>
+                        <input type="checkbox" class="toggle-checkbox" checked>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-label">
+                            <h4>Public Profile</h4>
+                            <p>Allow others to see your flash cards</p>
+                        </div>
+                        <input type="checkbox" class="toggle-checkbox">
+                    </div>
+                </div>
+            </section>
         </div>
+    </main>
 
-        <div class="user-info">
-            Username <input class="user-alias">
-            <br>
-            First Name <input type="text" class="first-name">
-            <br>
-            Last Name <input type="password" class="user-password">
-            <br>
-            Email <input type="email" class="user-email">
+    <!-- Profile Menu Modal -->
+    <div class="profile-modal" id="profile-modal">
+        <div class="profile-modal-content">
+            <button class="close-profile-modal" id="close-profile-modal">&times;</button>
+            <div class="profile-modal-header">
+                <img src="images/default-avatar.png" alt="Profile" class="profile-modal-avatar">
+                <h3 class="profile-modal-name">User Name</h3>
+                <p class="profile-modal-email">user@example.com</p>
+            </div>
+            <div class="profile-modal-menu">
+                <a href="profile.html#settings" class="profile-modal-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 1V3M12 21V23M23 12H21M3 12H1M20.49 20.49L19.07 19.07M4.93 4.93L3.51 3.51M20.49 3.51L19.07 4.93M4.93 19.07L3.51 20.49" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Settings</span>
+                </a>
+                <button class="profile-modal-item logout-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 17L21 12L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Log Out</span>
+                </button>
+            </div>
         </div>
-        
     </div>
-        
 
-
-
-    </div>    
+    <script src="script.js"></script>
 </body>
 </html>

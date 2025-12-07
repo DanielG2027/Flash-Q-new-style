@@ -339,3 +339,30 @@ document.addEventListener('DOMContentLoaded', () => {
     renderMyCards();
     renderPublicCards();
 });
+
+// ===== Profile Menu Modal =====
+const profileMenuBtn = document.getElementById('profile-menu-btn');
+const profileModal = document.getElementById('profile-modal');
+const closeProfileModal = document.getElementById('close-profile-modal');
+
+if (profileMenuBtn && profileModal) {
+    profileMenuBtn.addEventListener('click', () => {
+        profileModal.classList.toggle('active');
+    });
+}
+
+if (closeProfileModal && profileModal) {
+    closeProfileModal.addEventListener('click', () => {
+        profileModal.classList.remove('active');
+    });
+}
+
+// Close profile modal when clicking outside
+document.addEventListener('click', (e) => {
+    if (profileModal && profileMenuBtn) {
+        if (!profileModal.contains(e.target) && !profileMenuBtn.contains(e.target)) {
+            profileModal.classList.remove('active');
+        }
+    }
+});
+
